@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mainpage</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #CED5FF;
+        }
+
+        nav {
+            background-color: #333;
+            font-family: Arial, sans-serif;
+            padding: 1em 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1em;
+        }
+
+        .profile img {
+            width: 80px;
+            height: 70px;
+            border-radius: 50%;
+        }
+
+        .navbar {
+            list-style: none;
+            display: flex;
+            margin: 0;
+        }
+
+        .navbar li {
+            margin: 0 1em;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            padding: 0.5em 1em;
+            transition: background-color 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #555;
+            border-radius: 4px;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-container input[type="text"] {
+            padding: 0.5em;
+            border: none;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .search-container button {
+            padding: 0.5em;
+            border: none;
+            background-color: #555;
+            color: white;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .search-container button:hover {
+            background-color: #777;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer a {
+            color: #1da1f2;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #0a85d0;
+        }
+
+        h3 {
+            font-size: 20px;
+            margin-top: 100px;
+        }
+
+        .comment-section {
+            max-width: 600px;
+            margin: auto;
+            background-color: #9DABFF;
+        }
+        .comment-form {
+            margin-bottom: 20px;
+            background-color: #9DABFF;
+        }
+        .comment-form textarea {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 10px;
+            background-color: #9DABFF;
+        }
+        .comment {
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+        }
+        .comment .author {
+            font-weight: bold;
+        }
+        .comment .text {
+            margin: 5px 0;
+        }
+
+        .Journey {
+            background-color: #9DABFF;
+            width: 500px;
+            size: 700px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="profile">
+                <img src="https://i.pinimg.com/736x/d5/a2/4a/d5a24a368f7c409c8f50ad7c6b58e521.jpg" width="90" height="90" alt="Profile Picture">
+            </div>
+            <ul class="navbar">
+                <li><a href="mainpage.html">Mainpage</a></li>
+                <li><a href="page4.html">2nd Quarter</a></li>
+                <li><a href="page5.html">3rd Quarter</a></li>
+                <li><a href="page6.html">What's next?</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" placeholder="Search...">
+                <button type="submit">Search</button>
+            </div>
+        </div>
+    </nav>
+
+    <center><h3>What's Next?</h3></center>
+    <center><div class="Journey">
+    <h2>My next journey as an ICT student will guaranteed to be harder and more complex as compared to my grade 9 years, but I’ll try and continue to strive harder and make sure to be a more dilligent learner and coder.</h2></center>
+</div>
+
+<center><h3>Comments</h3></center>
+<center><div class="comment-section">
+    <div class="comment-form">
+        <form id="commentForm">
+            <textarea id="commentText" placeholder="Your Comment" required></textarea><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div></center>
+
+    <div id="commentsContainer">
+    </div>
+</div>
+
+<script>
+    document.getElementById('commentForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const author = document.getElementById('author').value;
+        const commentText = document.getElementById('commentText').value;
+
+        if(author && commentText) {
+            const commentContainer = document.createElement('div');
+            commentContainer.classList.add('comment');
+
+            const authorElement = document.createElement('div');
+            authorElement.classList.add('author');
+            authorElement.textContent = author;
+
+            const textElement = document.createElement('div');
+            textElement.classList.add('text');
+            textElement.textContent = commentText;
+
+            commentContainer.appendChild(authorElement);
+            commentContainer.appendChild(textElement);
+
+            document.getElementById('commentsContainer').appendChild(commentContainer);
+
+            document.getElementById('author').value = '';
+            document.getElementById('commentText').value = '';
+        }
+    });
+</script>
+
+</body>
+</html>
+
+
+    <footer>
+        <p>Follow me on Instagram: <a href="https://www.instagram.com/graetch/" target="_blank">graetch</a></p>
+    </footer>
+</body>
+</html>
+
